@@ -5,7 +5,7 @@ FROM ghcr.io/archlinux/archlinux:latest
 RUN pacman -Syu --noconfirm && \
     pacman -S --noconfirm \
     nodejs npm fish git curl inetutils unzip sed \
-    nvim sudo wget cmake python tmux tig python-pip neovim the_silver_searcher expect which \
+    nvim sudo wget cmake python tmux tig python-pip neovim the_silver_searcher expect which less \
     --needed && \
     rm -rf /var/cache/pacman/pkg/* && \
     echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && \
@@ -13,6 +13,10 @@ RUN pacman -Syu --noconfirm && \
 
 # 設定工作目錄
 WORKDIR /app
+
+# 複製 dotfiles 到 /root
+COPY dotfiles/ /root/dotfiles/
+RUN cp /root/dotfiles/.* /root/ 2>/dev/null || true && rm -rf /root/dotfiles/
 
 # git clone AstroNvim
 RUN git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim

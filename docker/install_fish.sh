@@ -12,8 +12,17 @@ set -x LC_ALL en_US.UTF-8
 set -x LSCOLORS "dxfxcxdxbxegedabagacad"
 set -x LS_COLORS "di=01;33"
 set -x fish_color_command green
-alias vi 'nvim'
-alias vim 'nvim'
+
+# alias
+alias tmux="tmux -2"
+alias h=history
+alias ll='ls -l'
+alias la='ls -a'
+alias sl=ls
+alias rm='rm -i'
+alias vi='nvim'
+alias vim='nvim'
+alias x=exit
 
 # 進入互動 shell 時自動切到 /root
 if status is-interactive
