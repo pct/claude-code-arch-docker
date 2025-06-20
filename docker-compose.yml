@@ -1,0 +1,19 @@
+services:
+  tifa-code-cli:
+    image: tifa-code-cli
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: tifa-code-cli
+    hostname: tifa-code-cli
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/app
+    working_dir: /app
+    entrypoint: fish
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

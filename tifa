@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+export COMPOSE_BAKE=true
+
+docker-compose build
+
+docker-compose up -d
+
+docker-compose exec tifa-code-cli bash docker/check_claude_code_daily.sh
+
+docker-compose exec tifa-code-cli fish "$@"
