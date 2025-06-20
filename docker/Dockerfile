@@ -27,9 +27,6 @@ RUN npm install -g @anthropic-ai/claude-code \
     && /usr/bin/claude --version \
     && /usr/bin/tifa --version
 
-# 設定環境變數
-ENV BUN_ENV=production
-
 # 安裝 fish 與 Oh My Fish
 COPY docker/install_fish.sh /app/install_fish.sh
 RUN bash /app/install_fish.sh

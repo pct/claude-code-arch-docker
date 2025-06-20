@@ -14,6 +14,11 @@ set -x LS_COLORS "di=01;33"
 set -x fish_color_command green
 alias vi 'nvim'
 alias vim 'nvim'
+
+# 進入互動 shell 時自動切到 /root
+if status is-interactive
+    cd /root
+end
 EOF
 
 # 安裝 Oh My Fish 與 fox 主題（非互動）
