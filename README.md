@@ -33,6 +33,19 @@ chmod +x ./tifa
 
 ---
 
+## 🚀 安裝 tifa
+
+### 在任意目錄都可以執行 tifa
+執行目錄都被鎖在 docker 的 /root，所以不用擔心您的本機任一目錄資料不小心傳出去
+
+```sh
+./install_tifa.sh
+```
+
+然後在任意目錄執行 `tifa`
+
+---
+
 ## 如果您需要手動修改 docker 環境
 
 1. 建置映像 Build Image
